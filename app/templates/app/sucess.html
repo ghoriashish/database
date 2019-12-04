@@ -1,0 +1,36 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    
+        <table>
+                <th>id</th>
+                <th>firstname</th>
+                <th>lastname</th>
+                <th>email</th>
+                <th>image</th>
+
+            {% if key %}
+            {% for a in key %}
+                <tr>
+                    <td>{{ a.id }} </td>
+                    <td>{{ a.Firstname }}</td>
+                    <td>{{ a.Lastname }}</td>  
+                    <td>{{ a.Email }}</td>
+                    <td><img style="width: 10%; height: 15%;" src="{{ MEDIA_URL }}{{ a.profile_pic.url }}"></td>
+                   
+                    
+                {% endfor %}
+            {% endif %}
+            
+        </table>
+
+    
+</body>
+</html>
